@@ -8,3 +8,20 @@
 body {
   background-color: $background-color;
 }
+
+.upload-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0.5rem 1rem;
+  gap: 1rem;
+
+  > * {
+    > * {
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+img {
+  max-width: 100%;
+}
