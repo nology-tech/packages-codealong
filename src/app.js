@@ -1,7 +1,18 @@
-import "./style.scss";
-import ColorThief from "colorthief";
 import confetti from "canvas-confetti";
+import ColorThief from "colorthief";
+import "./style.scss";
 
+// HTML Elements
+const image = document.querySelector("#image");
+const imageUrl = document.querySelector("#image-input");
+const fileUpload = document.querySelector("#file-upload");
+const clearUpload = document.querySelector("#clear-upload");
+
+// Global Variables
+let file;
+const colorThief = new ColorThief();
+
+// Functions
 const randomInRange = (min, max) => Math.random() * (max - min) + min;
 
 const fireConfetti = (colors) => {
@@ -18,32 +29,6 @@ const fireConfetti = (colors) => {
   }
 };
 
-const image = document.querySelector("#img");
-const imageUrl = document.querySelector("#image-input");
-const fileUpload = document.querySelector("#file-upload");
-const clearUpload = document.querySelector("#clear-upload");
-
-let file;
-
-const handleFileInput = (event) => {
-  event.preventDefault();
-  file = event.target.files[0];
-  const url = URL.createObjectURL(file);
-  image.src = url;
-};
-
-const handleUrlInput = (event) => {
-  console.log(event.target.value);
-  image.src = event.target.value;
-};
-
-const handleClearUpload = () => {
-  console.log("hello");
-  fileUpload.value = null;
-};
-
-const colorThief = new ColorThief();
-
 const onImageLoad = () => {
   const [red, green, blue] = colorThief.getColor(image);
   const colorPalette = colorThief.getPalette(image);
@@ -57,8 +42,24 @@ const onImageLoad = () => {
   fireConfetti(colorPalette);
 };
 
-// starting logic
-fileUpload.addEventListener("input", handleFileInput);
-imageUrl.addEventListener("input", handleUrlInput);
-clearUpload.addEventListener("click", handleClearUpload);
+const handleUrlInput = (event) => {
+  console.log(event.target.value);
+  image.src = event.target.value;
+};
+
+const handleFileInput = (event) => {
+  event.preventDefault();
+  file = event.target.files[0];
+  const url = URL.createObjectURL(file);
+  image.src = url;
+};
+
+const handleClearUpload = () => {
+  fileUpload.value = null;
+};
+
+// Event Listeners
 image.addEventListener("load", onImageLoad);
+imageUrl.addEventListener("input", handleUrlInput);
+fileUpload.addEventListener("input", handleFileInput);
+clearUpload.addEventListener("click", handleClearUpload);

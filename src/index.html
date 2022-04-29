@@ -12,13 +12,9 @@
 
 <body>
   <h1>Welcome To Packages!</h1>
-  <p>
-    Try it with the following image URL:
-    https://www.cesarsway.com/wp-content/uploads/2015/07/6-steps-to-teaching-your-dog-to-fetch_0.jpg
-  </p>
 
-  <div class="upload-container">
-    <div>
+  <div class="upload">
+    <div class="upload__container">
       <h2>Upload Image</h2>
       <div>
         <label for="file-upload">Upload Image</label>
@@ -26,17 +22,14 @@
       </div>
       <button id="clear-upload">Clear Upload</button>
     </div>
-    <div>
+    <div class="upload__container">
       <h2>Image Url</h2>
       <label for="image-input">Image Url</label>
       <input id="image-input" type="url" />
     </div>
   </div>
 
-  <br />
-  <br />
-
-  <img id="img" crossorigin="anonymous" />
+  <img class="image" id="image" crossorigin="anonymous" />
 </body>
 
 </html>
