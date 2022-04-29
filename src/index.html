@@ -1,16 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="icon"
-      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎯</text></svg>"
-    />
-    <title>JS Boilerplate</title>
-  </head>
-  <body>
-    <h1>Vanilla JS Project Boilerplate</h1>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎯</text></svg>" />
+  <title>NPM Intro</title>
+</head>
+
+<body>
+  <h1>Welcome To Packages!</h1>
+
+  <div class="upload">
+    <div class="upload__container">
+      <h2>Upload Image</h2>
+      <div>
+        <label for="file-upload">Upload Image</label>
+        <input type="file" id="file-upload" accept="image/*" />
+      </div>
+      <button id="clear-upload">Clear Upload</button>
+    </div>
+    <div class="upload__container">
+      <h2>Image Url</h2>
+      <label for="image-input">Image Url</label>
+      <input id="image-input" type="url" />
+    </div>
+  </div>
+
+  <img class="image" id="image" crossorigin="anonymous" />
+</body>
+
 </html>

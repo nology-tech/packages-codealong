@@ -1,8 +1,25 @@
-# JS Boilerplate 🏭
+# Packages Codealong 💼
 
-This project uses [webpack.js](https://webpack.js.org/) to compile our JavaScript code.
+## Lesson 👩‍🏫
 
-SASS is included but your single `style.scss` file will need to be imported through JavaScript instead of linked to HTML as webpack compiles it all for us!
+Using the Canvas Confetti, Color Thief, GitHub Pages packages to introduce NPM.
+
+The notes folder contains the plan for lesson, it contains steps, snippets, and styles you will need to complete the branch.
+
+### Branches 🌿
+
+- main
+- lesson-start
+
+### Setup
+
+- Use this template to create a new repository, clone it down and open in VS Code
+- Change to lesson-start branch: `git checkout lesson-start`
+- Install dependencies: `npm install`
+
+<br/>
+<hr/>
+<br/>
 
 ## Quickstart 🦧
 
@@ -12,11 +29,19 @@ SASS is included but your single `style.scss` file will need to be imported thro
 - Run the live server: `npm start`
   - This will look for an `index.html` in the build folder, automatically opening it in your browser
 
+<br/>
+<hr/>
+<br/>
+
 ## Deployment Instructions 🚀
 
 - Modify the `package.json` "homepage" property to match your own (https://\*your-username\*.github.io/\*your-repository-name\*)
 - Run `npm run build` in the terminal to create a build folder
 - Run `npm run deploy` in the terminal, this will create a "gh-pages" branch in your repository and deploy a copy of your local build folder
+
+<br/>
+<hr/>
+<br/>
 
 ## Available Scripts 📜
 

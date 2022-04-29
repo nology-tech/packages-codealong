@@ -14,6 +14,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "canvas-confetti": "^1.5.1",
+    "colorthief": "^2.3.2",
     "gh-pages": "^3.2.3",
     "lodash": "^4.17.21"
   },
