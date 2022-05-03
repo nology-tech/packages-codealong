@@ -6,7 +6,7 @@ Include a button with an id in the HTML
 <button id="confetti-button">Fire Confetti</button>
 ```
 
-Create a fire confetti button and hook it up to the on click of the button
+Create a fire confetti button and hook it up to the on click of the button, it's important to note we do want two separate functions here: one for the fireConfetti and one to handle the event listener (this will become important when we add parameters to fireConfetti later)
 
 ```js
 import "./style.scss";
@@ -27,6 +27,10 @@ const fireConfetti = () => {
   };
 
   confetti(confettiOptions);
+};
+
+const handleConfettiPress = () => {
+  fireConfetti();
 };
 
 confettiButton.addEventListener("click", fireConfetti);
