@@ -1,8 +1,8 @@
 {
-  "name": "test",
+  "name": "packages-codealong",
   "version": "1.0.0",
-  "description": "example project that uses npm packages",
-  "homepage": "https://danforder.github.io/js-boilerplate",
+  "description": "Codealong for NPM lesson",
+  "homepage": "https://nology-tech.github.io/packages-codealong",
   "private": true,
   "scripts": {
     "build": "webpack --config ./webpack.config.js",
@@ -11,7 +11,7 @@
     "deploy": "gh-pages -d build"
   },
   "keywords": [],
-  "author": "",
+  "author": "Dan Forder",
   "license": "ISC",
   "dependencies": {
     "canvas-confetti": "^1.5.1",
