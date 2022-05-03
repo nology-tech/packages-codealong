@@ -1,65 +1,43 @@
+import "./style.scss";
 import confetti from "canvas-confetti";
 import ColorThief from "colorthief";
-import "./style.scss";
 
-// HTML Elements
-const image = document.querySelector("#image");
-const imageUrl = document.querySelector("#image-input");
-const fileUpload = document.querySelector("#file-upload");
-const clearUpload = document.querySelector("#clear-upload");
-
-// Global Variables
-let file;
 const colorThief = new ColorThief();
 
-// Functions
-const randomInRange = (min, max) => Math.random() * (max - min) + min;
+const confettiButton = document.querySelector("#confetti-button");
+const dogImage = document.querySelector("#dog-image");
+const imageUrlInput = document.querySelector("#image-url-input");
 
-const fireConfetti = (colors) => {
-  for (let index = 0; index < 5; index++) {
-    const confettiOptions = {
-      particleCount: randomInRange(50, 100),
-      angle: randomInRange(55, 125),
-      spread: randomInRange(50, 70),
-      origin: { y: 0.6 },
-      colors,
-    };
+const randomInRange = (min, max) => {
+  return Math.random() * (max - min) + min;
+};
 
-    confetti(confettiOptions);
-  }
+const fireConfetti = (colorPalette) => {
+  const confettiOptions = {
+    particleCount: randomInRange(50, 100),
+    angle: randomInRange(55, 125),
+    spread: randomInRange(50, 70),
+    origin: { y: 0.6 },
+    colors: colorPalette,
+  };
+
+  confetti(confettiOptions);
 };
 
 const onImageLoad = () => {
-  const [red, green, blue] = colorThief.getColor(image);
-  const colorPalette = colorThief.getPalette(image);
+  const color = colorThief.getColor(dogImage);
+  const colorPalette = colorThief.getPalette(dogImage);
 
-  // set body to dominant color
   const body = document.querySelector("body");
-  body.style.backgroundColor = `rgb(${red},${green},${blue})`;
+  body.style.backgroundColor = `rgb(${color[0]},${color[1]},${color[2]})`;
 
-  // fire confetti with color palette
-  console.log("%cTHIS IS THE COLOR", `color: rgb(${red},${green},${blue});`);
   fireConfetti(colorPalette);
 };
 
 const handleUrlInput = (event) => {
-  console.log(event.target.value);
-  image.src = event.target.value;
+  dogImage.src = event.target.value;
 };
 
-const handleFileInput = (event) => {
-  event.preventDefault();
-  file = event.target.files[0];
-  const url = URL.createObjectURL(file);
-  image.src = url;
-};
-
-const handleClearUpload = () => {
-  fileUpload.value = null;
-};
-
-// Event Listeners
-image.addEventListener("load", onImageLoad);
-imageUrl.addEventListener("input", handleUrlInput);
-fileUpload.addEventListener("input", handleFileInput);
-clearUpload.addEventListener("click", handleClearUpload);
+confettiButton.addEventListener("click", fireConfetti);
+dogImage.addEventListener("load", onImageLoad);
+imageUrlInput.addEventListener("input", handleUrlInput);
