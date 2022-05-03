@@ -58,3 +58,13 @@ const onImageLoad = () => {
 ```
 
 ## [Challenge 2](./challenge02/challenge.md)
+
+## GitHub Pages
+
+- Update the package.json file so it has the homepage and author property
+  - `"homepage": "https://*your-username*.github.io/*your-repo-name*"`
+  - `"author": "*your-name*"`
+- Make sure the build folder is up to date by running `npm run build`
+- Use the deploy command `npm run deploy`
+- Check your github for a new deploy
+  - There will also be a new branch called "gh-pages" which contains the contents of the build folder

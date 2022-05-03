@@ -2,7 +2,8 @@
   "name": "packages-codealong",
   "version": "1.0.0",
   "description": "Codealong for NPM lesson",
-  "homepage": "https://nology-tech.github.io/packages-codealong",
+  "homepage": "",
+  "author": "",
   "private": true,
   "scripts": {
     "build": "webpack --config ./webpack.config.js",
@@ -11,7 +12,6 @@
     "deploy": "gh-pages -d build"
   },
   "keywords": [],
-  "author": "Dan Forder",
   "license": "ISC",
   "dependencies": {
     "canvas-confetti": "^1.5.1",
