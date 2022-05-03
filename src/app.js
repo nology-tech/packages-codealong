@@ -24,6 +24,10 @@ const fireConfetti = (colorPalette) => {
   confetti(confettiOptions);
 };
 
+const handleConfettiPress = () => {
+  fireConfetti();
+};
+
 const onImageLoad = () => {
   const color = colorThief.getColor(dogImage);
   const colorPalette = colorThief.getPalette(dogImage);
@@ -38,6 +42,6 @@ const handleUrlInput = (event) => {
   dogImage.src = event.target.value;
 };
 
-confettiButton.addEventListener("click", fireConfetti);
+confettiButton.addEventListener("click", handleConfettiPress);
 dogImage.addEventListener("load", onImageLoad);
 imageUrlInput.addEventListener("input", handleUrlInput);
