@@ -38,10 +38,6 @@ const onImageLoad = () => {
   fireConfetti(colorPalette);
 };
 
-if (dogImage.complete) {
-  onImageLoad();
-}
-
 const handleUrlInput = event => {
   dogImage.src = event.target.value;
 };
@@ -49,3 +45,9 @@ const handleUrlInput = event => {
 confettiButton.addEventListener("click", handleConfettiPress);
 imageUrlInput.addEventListener("input", handleUrlInput);
 dogImage.addEventListener("load", onImageLoad);
+
+if (dogImage.complete) {
+  onImageLoad();
+} else {
+  dogImage.addEventListener("load", onImageLoad);
+}
