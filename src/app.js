@@ -44,7 +44,6 @@ const handleUrlInput = event => {
 
 confettiButton.addEventListener("click", handleConfettiPress);
 imageUrlInput.addEventListener("input", handleUrlInput);
-dogImage.addEventListener("load", onImageLoad);
 
 if (dogImage.complete) {
   onImageLoad();
