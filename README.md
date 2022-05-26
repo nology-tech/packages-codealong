@@ -24,9 +24,8 @@ The notes folder contains the plan for lesson, it contains steps, snippets, and 
 ## Quickstart 🦧
 
 - Install the dependencies `npm i`
-- Create a build folder: `npm run build:dev`
-  - This will run a webpack build in "watch" mode
-- Run the live server: `npm start`
+- Run webpack and launch the live server: `npm start`
+  - This will run a webpack build in "watch" mode, automatically looking for changes in src and bundling them into the build folder.
   - This will look for an `index.html` in the build folder, automatically opening it in your browser
 
 <br/>
@@ -53,9 +52,13 @@ Compiles your code into a build folder (runs once)
 
 Compiles your code into a build folder (continuously watching for changes)
 
-### `start`
+### `server`
 
 Hosts your build folder's index.html on a local server, and opens up in your default browser
+
+### `start`
+
+Combines and runs the `build:dev` and `server` script in parallel.
 
 ### `deploy`
 

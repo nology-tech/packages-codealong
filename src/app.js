@@ -12,7 +12,7 @@ const randomInRange = (min, max) => {
   return Math.random() * (max - min) + min;
 };
 
-const fireConfetti = (colorPalette) => {
+const fireConfetti = colorPalette => {
   const confettiOptions = {
     particleCount: randomInRange(50, 100),
     angle: randomInRange(55, 125),
@@ -38,10 +38,15 @@ const onImageLoad = () => {
   fireConfetti(colorPalette);
 };
 
-const handleUrlInput = (event) => {
+const handleUrlInput = event => {
   dogImage.src = event.target.value;
 };
 
 confettiButton.addEventListener("click", handleConfettiPress);
-dogImage.addEventListener("load", onImageLoad);
 imageUrlInput.addEventListener("input", handleUrlInput);
+
+if (dogImage.complete) {
+  onImageLoad();
+} else {
+  dogImage.addEventListener("load", onImageLoad);
+}
