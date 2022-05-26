@@ -31,9 +31,15 @@ const dogImage = document.querySelector("#dog-image");
 
 - Navigate to [NPM Registry](https://www.npmjs.com/) and search for "colorthief" (all one word, there is a hyphenated version which we don't want!)
 - Following the installation instructions on [the page](https://lokeshdhakar.com/projects/color-thief/#getting-started) ("Using in the browser" -> "Import as an ES6 module")
+
   - `npm i --save colorthief` to add this in our application
+
+  - **Students may have issues installing the package** If they do run into any issues try installing the version below.
+  - `npm i --save colorthief@2.2.0`
   - Add `const colorThief = new ColorThief();`
-- Using an "on load" event listener on the image, we're going to use the getColor method from colorThief. It returns an array with the dominant color's rgb value:
+
+- First you will need to check if the img has completed. If it has you run the `onImageLoad()` function if it hasn't you can set an "on load" event listener on the image ro run it once it has loaded.
+- With `onImageLoad()` we're going to use the getColor method from colorThief. It returns an array with the dominant color's rgb value:
 
 ```js
 const onImageLoad = () => {
@@ -41,7 +47,11 @@ const onImageLoad = () => {
   console.log(color);
 };
 
-dogImage.addEventListener("load", onImageLoad);
+if (dogImage.complete) {
+  onImageLoad();
+} else {
+  dogImage.addEventListener("load", onImageLoad);
+}
 ```
 
 - Enter the rgb codes into google to see what color they come out as (search "rgb" followed by the three number values)
